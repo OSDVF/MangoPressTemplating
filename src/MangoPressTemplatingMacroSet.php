@@ -63,9 +63,9 @@ class MangoPressTemplatingMacroSet extends MacroSet {
 		$args = implode(' as ', $parts);
 
 		if ($node->modifiers !== '|noiterator' && preg_match('#\W(\$iterator|include|require|get_defined_vars)\W#', $this->getCompiler()->expandTokens($node->content))) {
-			$node->openingCode = '<?php $iterations = 0; $_l_q=' . $array . '; foreach ($iterator = $_l->its[] = new Latte\Runtime\CachingIterator('
+			$node->openingCode = '<?php $iterations = 0; $_l_q=' . $array . '; foreach ($iterator = $its[] = new Latte\Runtime\CachingIterator('
 			. preg_replace('#(.*)\s+as\s+#i', '$1) as ', $args, 1) . ') { ?>';
-			$node->closingCode = '<?php $iterations++; } array_pop($_l->its); $iterator = end($_l->its) ?>';
+			$node->closingCode = '<?php $iterations++; } array_pop($its); $iterator = end($its) ?>';
 		} else {
 			$node->openingCode = '<?php $iterations = 0; $_l_q=' . $array . '; foreach (' . $args . ') { ?>';
 			$node->closingCode = '<?php $iterations++; } ?>';
