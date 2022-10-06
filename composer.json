@@ -1,5 +1,5 @@
 {
-    "name": "mangoweb/mangopress-templating",
+    "name": "osdvf/mangopresstemplating",
     "description": "Prepared templating workflow with filters and macros.",
     "homepage": "https://github.com/mangoweb/MangoPressTemplating",
     "license": "MIT",
